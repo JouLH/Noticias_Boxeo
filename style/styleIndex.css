@@ -13,58 +13,6 @@
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.contenedor{
-    display: grid;
-    grid-template-columns: 15% 70% 15%;
-    grid-template-areas: "head head head"
-                         "nada divUNO nada1";
-}
-.divUno{
-    grid-area: divUNO;
-    padding: 100px;
-    background-color: #f2f2f2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-}
-.divUno img{
-    width: 100%;
-    height: 100%;
-}
-.infoDiv{
-    gap: 30px ;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 23px;
-}
-.botonesDIV{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 100px;
-    padding: 30px;
-    
-}
-.infoDiv .botonesDIV button{
-    background-color:#222;
-    border: none;
-    border-radius: 100px;
-    cursor: pointer;
-    padding: 20px;
-    width: 125px;
-    font-size: large;
-    box-shadow: 0px 9px 5px 0px rgba(124, 115, 115, 0.8); /*ejex ejey desenfoque radio_propagacdion*/
-    color: #fff;
-    transition: all 0.4s;
-}
-.infoDiv .botonesDIV button:hover{
-    background-color: gray;
-}
-
 
 .header {
     grid-area: head;
@@ -127,7 +75,120 @@
     font-weight: bold;
 }
 
+.contenedor{
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-areas: "head head head"
+                         "nada divUNO nada1"
+                         "nada slider nada1";
+}
+.divUno{
+    grid-area: divUNO;
+    padding: 100px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px auto 0;
+    border-radius: 50px;
+    font-size: large;
+}
 
+.infoDiv{
+    gap: 30px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+.botonesDIV{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+.infoDiv .botonesDIV button{
+    background-color:#222;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    padding: 20px;
+    width: 125px;
+    font-size: large;
+    box-shadow: 0px 9px 5px 0px rgba(124, 115, 115, 0.8); /*ejex ejey desenfoque radio_propagacdion*/
+    color: #fff;
+    transition: all 0.4s;
+}
+.infoDiv .botonesDIV button:hover{
+    background-color: gray;
+}
+
+
+
+
+.slider-box{
+   grid-area: slider;
+   width: 100%;
+   height: auto;
+   margin: 20px auto 0;
+   overflow: hidden;
+   border-radius: 50px;
+}
+
+.slider-box ul{
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.slider-box li{
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.slider-box img{
+    width: 1000px;
+    height: 800px;
+}
+.texto{
+    position: absolute;
+    text-align: center;
+    padding: 0 250px;
+    top: 250px;
+    color: #ffffff;
+}
+
+.texto h2{
+    font-size: 45px;
+    margin-bottom: 35px;
+}
+.texto p{
+    font-size: 25px;
+}
+
+.slider-box img{
+    width: 100%;
+}
+
+@keyframes slide{
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+
+}
 
 @media(min-width:778px){
     .label_hamburguesa{
@@ -144,7 +205,7 @@
         font-size: 1.2rem;
         padding: 0.2rem 0.7rem;
         transition: all 0.4s;
-        border-radius: 10px;
+        border-radius: 100px;
     }
     .link:hover{
         background-color: var(--color_primario_suave);
@@ -152,11 +213,16 @@
 
 }
 @media (max-width: 768px) {
+    body{
+        background-color: #f2f2f2;
+    }
     .contenedor{
         display: grid;
+        background-color: #f2f2f2;
         grid-template-columns: 15% 70% 15%;
         grid-template-areas: "head head head"
-                             "divUNO divUNO divUNO";
+                             "divUNO divUNO divUNO"
+                             "slider slider slider";
     }
     .divUno{
         grid-area: divUNO;
@@ -170,12 +236,24 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 100px;
-        padding: 30px;
+        gap: 50px;
+        padding: 10px;
         
     }
-    .divUno img{
-        width: 200%;
-        height: 200%;
+    .slider-box{
+        grid-area: slider;
+        width: 100%;
+        height: auto;
+    }
+    .texto{
+        top: 50%;
+        padding: 0 25px;
+    }
+    .texto h2{
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    .texto p{
+        font-size: 9px;
     }
 }
