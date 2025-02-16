@@ -25,28 +25,33 @@
     display: flex;
     width: min(1200px, 100%);
     margin: 0 auto;
-    justify-content: space-between; /*dar espacio entre elementos*/
+    justify-content: space-between;
+    /*dar espacio entre elementos*/
     align-items: center;
     flex-wrap: wrap;
     position: relative;
     padding: 0 var(--padding_left_right);
 }
-.menu_hamburguesa{
+
+.menu_hamburguesa {
     display: none;
 }
-.menu_hamburguesa:checked + .ul_links{
+
+.menu_hamburguesa:checked+.ul_links {
     height: calc(100vh - var(--altura_header));
 }
 
 .logo {
     color: white;
 }
+
 .fa-solid {
     color: white;
     cursor: pointer;
     height: auto;
 }
-.fa-brands{
+
+.fa-brands {
     color: white;
 }
 
@@ -75,14 +80,16 @@
     font-weight: bold;
 }
 
-.contenedor{
+.contenedor {
     display: grid;
     grid-template-columns: 15% 70% 15%;
     grid-template-areas: "head head head"
-                         "nada divUNO nada1"
-                         "nada slider nada1";
+        "nada divUNO nada1"
+        "nada slider nada1"
+        "info info info";
 }
-.divUno{
+
+.divUno {
     grid-area: divUNO;
     padding: 100px;
     background-color: #f2f2f2;
@@ -96,63 +103,67 @@
     font-size: large;
 }
 
-.infoDiv{
-    gap: 30px ;
+.infoDiv {
+    gap: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 23px;
 }
-.botonesDIV{
+
+.botonesDIV {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 100px;
 }
-.infoDiv .botonesDIV button{
-    background-color:#222;
+
+.infoDiv .botonesDIV button {
+    background-color: #222;
     border: none;
     border-radius: 100px;
     cursor: pointer;
     padding: 20px;
     width: 125px;
     font-size: large;
-    box-shadow: 0px 9px 5px 0px rgba(124, 115, 115, 0.8); /*ejex ejey desenfoque radio_propagacdion*/
+    box-shadow: 0px 9px 5px 0px rgba(124, 115, 115, 0.8);
+    /*ejex ejey desenfoque radio_propagacdion*/
     color: #fff;
     transition: all 0.4s;
 }
-.infoDiv .botonesDIV button:hover{
+
+.infoDiv .botonesDIV button:hover {
     background-color: gray;
 }
 
 
 
 
-.slider-box{
-   grid-area: slider;
-   width: 100%;
-   height: auto;
-   margin: 20px auto 0;
-   overflow: hidden;
-   border-radius: 50px;
+.slider-box {
+    grid-area: slider;
+    width: 100%;
+    height: auto;
+    /*margin: 20px auto 0;*/
+    overflow: hidden;
+    border-radius: 50px;
 }
 
-.slider-box ul{
+.slider-box ul {
     display: flex;
     padding: 0;
     width: 400%;
     animation: slide 20s infinite alternate ease-in-out;
 }
 
-.slider-box li{
+.slider-box li {
     width: 100%;
     list-style: none;
     position: relative;
 }
 
 
-.texto{
+.texto {
     position: absolute;
     text-align: center;
     padding: 0 250px;
@@ -160,103 +171,206 @@
     color: #ffffff;
 }
 
-.texto h2{
+.texto h2 {
     font-size: 45px;
     margin-bottom: 35px;
 }
-.texto p{
+
+.texto p {
     font-size: 25px;
 }
 
-.slider-box img{
+.slider-box img {
     width: 100%;
     height: 800px;
 }
 
-@keyframes slide{
-    0% {margin-left: 0;}
-    20% {margin-left: 0;}
+.info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    background-color: #211b1b;
+    padding: 100px 150px 100px 150px;
+    gap: 80px;
+    color: #fff;
+    font-size: 20px;
+    /* margin: 20px auto 0;*/
+}
 
-    25% {margin-left: -100%;}
-    45% {margin-left: -100%;}
-
-    50% {margin-left: -200%;}
-    70% {margin-left: -200%;}
-
-    75% {margin-left: -300%;}
-    100% {margin-left: -300%;}
+.info_1 {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
 
 }
 
-@media(min-width:778px){
-    .label_hamburguesa{
+.info_1 p {
+    font-size: 25x;
+}
+
+.info_2 {
+    display: flex;
+    gap: 100px;
+    justify-content: space-between;
+}
+
+.info_2_1 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: #fff 1px solid;
+    border-radius: 50px;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@keyframes slide {
+    0% {
+        margin-left: 0;
+    }
+
+    20% {
+        margin-left: 0;
+    }
+
+    25% {
+        margin-left: -100%;
+    }
+
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
+
+}
+
+@media(min-width:778px) {
+    .label_hamburguesa {
         display: none;
     }
-    .ul_links{
+
+    .ul_links {
         position: static;
         width: auto;
         flex-direction: row;
         height: auto;
         gap: 3rem;
     }
-    .link{
+
+    .link {
         font-size: 1.2rem;
         padding: 0.2rem 0.7rem;
         transition: all 0.4s;
         border-radius: 100px;
     }
-    .link:hover{
+
+    .link:hover {
         background-color: var(--color_primario_suave);
     }
 
 }
+
 @media (max-width: 768px) {
-    body{
+    body {
         background-color: #f2f2f2;
     }
-    .contenedor{
+
+    .contenedor {
         display: grid;
         background-color: #f2f2f2;
         grid-template-columns: 15% 70% 15%;
         grid-template-areas: "head head head"
-                             "divUNO divUNO divUNO"
-                             "slider slider slider";
+            "divUNO divUNO divUNO"
+            "slider slider slider"
+            "info info info";
     }
-    .divUno{
+
+    .divUno {
         grid-area: divUNO;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-    .botonesDIV{
+
+    .botonesDIV {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 50px;
         padding: 10px;
-        
+
     }
-    .slider-box{
+
+    .slider-box {
         grid-area: slider;
         width: 100%;
         height: auto;
         border-radius: 0;
     }
-    .texto{
+
+    .texto {
         top: 50%;
         padding: 0 25px;
     }
-    .texto h2{
+
+    .texto h2 {
         font-size: 15px;
         margin-bottom: 10px;
     }
-    .texto p{
+
+    .texto p {
         font-size: 9px;
     }
-    .slider-box img{
+
+    .slider-box img {
         width: 100%;
         height: 200px;
+    }
+
+    .info {
+        grid-area: info;
+        padding: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info_1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info_2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info_2_1 {
+        border: #fff 1px solid;
+        border-radius: 50px;
+        padding: 20px;
+        align-items: center;
+        justify-content: center;
     }
 }
