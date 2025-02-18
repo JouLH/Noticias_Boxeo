@@ -86,7 +86,8 @@
     grid-template-areas: "head head head"
         "nada divUNO nada1"
         "nada slider nada1"
-        "info info info";
+        "info info info"
+        "last last last";
 }
 
 .divUno {
@@ -202,7 +203,6 @@
     gap: 100px;
     justify-content: center;
     align-items: center;
-
 }
 
 .info_1 p {
@@ -224,6 +224,64 @@
     padding: 50px;
     align-items: center;
     justify-content: center;
+}
+.last{
+    width: 100%;
+    background-color: #625959 ;
+    grid-area: last;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 90px 50px 90px 50px;
+    font-size: 23px;
+}
+.last_1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding-bottom: 20px;
+}
+.last_2{
+    display: flex;    
+    justify-content: space-between;
+    padding: 50px;
+}
+.news{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 25%;
+    height: 100%;
+    background-color: #211b1b;
+    transition: transform 0.5s;
+}
+.news:hover{
+    transform: translateY(-40px);
+    background-color: #927d68;}
+.news img{
+    width: 100%;
+    height: 220px;
+    border-radius: 10px 10px 0px 0px;
+}
+.newsInfo{
+    display: flex;
+    flex-direction: column;
+    align-items:first baseline;
+    padding: 30px;
+    gap: 20px;
+}
+p{
+    text-align: justify;
+}
+.infoBoton{
+    padding: 15px;
+    background-color: #625959;
+    border-radius: 10px;
+}
+.newsInfo p:last-child{
+    cursor: pointer;
 }
 
 
@@ -300,7 +358,8 @@
         grid-template-areas: "head head head"
             "divUNO divUNO divUNO"
             "slider slider slider"
-            "info info info";
+            "info info info"
+            "last last last";
     }
 
     .divUno {
@@ -309,6 +368,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 20px;
     }
 
     .botonesDIV {
@@ -359,6 +419,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 20px;
     }
 
     .info_2 {
@@ -371,6 +432,33 @@
         border-radius: 50px;
         padding: 20px;
         align-items: center;
+       
         justify-content: center;
+    }
+    .last{
+        grid-area: last;
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+    .last_1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 50px;
+    }
+    .last_2{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+    .news{
+        width: 100%;
     }
 }
