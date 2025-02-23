@@ -46,12 +46,12 @@
 }
 
 .fa-solid {
-    color: white;
+    color: rgb(255, 252, 252);
     cursor: pointer;
     height: auto;
 }
 
-.fa-brands {
+.li_links .fa-brands {
     color: white;
 }
 
@@ -81,13 +81,15 @@
 }
 
 .contenedor {
+    overflow-x: hidden;
     display: grid;
     grid-template-columns: 15% 70% 15%;
     grid-template-areas: "head head head"
-        "nada divUNO nada1"
+        "divUNO divUNO divUNO"
         "nada slider nada1"
         "info info info"
-        "last last last";
+        "last last last"
+        "pie pie pie";
 }
 
 .divUno {
@@ -99,8 +101,6 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
-    margin: 20px auto 0;
-    border-radius: 50px;
     font-size: large;
 }
 
@@ -135,7 +135,7 @@
 }
 
 .infoDiv .botonesDIV button:hover {
-    background-color: gray;
+   opacity: 0.4;
 }
 
 
@@ -147,7 +147,6 @@
     height: auto;
     /*margin: 20px auto 0;*/
     overflow: hidden;
-    border-radius: 50px;
 }
 
 .slider-box ul {
@@ -255,11 +254,11 @@
     width: 25%;
     height: 100%;
     background-color: #211b1b;
-    transition: transform 0.5s;
 }
 .news:hover{
     transform: translateY(-40px);
-    background-color: #927d68;}
+    background-color: #927d68;
+}
 .news img{
     width: 100%;
     height: 220px;
@@ -283,8 +282,82 @@ p{
 .newsInfo p:last-child{
     cursor: pointer;
 }
+.pie{
+    grid-area: pie;
+    background-color: #f5efef;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "pie1 pie2"
+                         "pie3 pie3";
+    padding: 50px;
+    font-size: 18px;
 
-
+}
+.pie_1{
+    grid-area: pie1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.pie_1 p:nth-child(odd){
+    padding-bottom: 50px;
+}
+.pie_1 img{
+    width: 10%;
+    height: 20%;
+}
+.redes{
+    display: flex;
+    gap: 20px;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+}
+.pie_2{
+    grid-area: pie2;
+    display: flex;
+    justify-content: end;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.pie_2 p:hover{
+    cursor: pointer;
+    opacity: 0.4;
+}
+.pie_2_1{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: end;
+    flex-wrap: wrap;
+}
+.pie_2_2{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: end;
+    flex-wrap: wrap;
+}
+.pie_3{
+    padding-top: 10px;
+    grid-area: pie3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.pie_3_1{
+    display: flex;
+    justify-content: end;
+    gap: 40px;
+    flex-wrap: wrap;  
+}
+.pie_3 p{
+    padding-top: 30px;
+}
+.pie_3_1 p:hover{
+    cursor: pointer;
+    opacity: 0.4;
+}
 @keyframes slide {
     0% {
         margin-left: 0;
@@ -359,7 +432,8 @@ p{
             "divUNO divUNO divUNO"
             "slider slider slider"
             "info info info"
-            "last last last";
+            "last last last"
+            "pie pie pie";
     }
 
     .divUno {
@@ -461,4 +535,49 @@ p{
     .news{
         width: 100%;
     }
+    .pie{
+        grid-area: pie;
+        display: flex;
+        flex-direction: column;
+    }
+    .pie_2{
+        padding-top: 50px;
+    }
+    .pie_2_1{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: first baseline;
+        flex-wrap: wrap;
+    }
+    .pie_2_2{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: end;
+        flex-wrap: wrap;
+    }
+    .pie_3{
+        padding-top: 50px;
+    }
+    .pie_3_1{
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.scroll-section {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition: transform 0.8s;
+}
+
+.scroll-section.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.scroll-section.visible:hover{
+    transform: translateY(-40px);
 }
